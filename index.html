@@ -263,47 +263,47 @@ How many players are there? (2-8)
 
 &lt;&lt;textbox &quot;_input3&quot; &quot;2&quot; autofocus&gt;&gt;&lt;&lt;button &quot;Submit&quot;&gt;&gt;
 	&lt;&lt;if _input3 &gt; 0&gt;&gt;
-		&lt;&lt;set $playerCount = &quot;_input3&quot;&gt;&gt;&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;_input3&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;set $playerCount = _input3&gt;&gt;&lt;&lt;replace &quot;#output1&quot;&gt;&gt;&lt;&lt;= either([_input3])&gt;&gt;&lt;&lt;/replace&gt;&gt;
         
      &lt;&lt;elseif _input3 &lt; 1&gt;&gt;
-     	&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;The A.I. can&#39;t play by itself.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+     	&lt;&lt;replace &quot;#output1&quot;&gt;&gt;&lt;&lt;= either([&quot;The A.I. can&#39;t play by itself.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
         
 	&lt;&lt;else&gt;&gt;
-		&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;Numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;replace &quot;#output1&quot;&gt;&gt;&lt;&lt;= either([&quot;Numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;span id=&quot;output&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;output1&quot;&gt;&lt;/span&gt;
 
-How long do you want to play? (Default is 5)
+How many rounds do you want to play? (Default is 5)
 
 &lt;&lt;textbox &quot;_input1&quot; &quot;5&quot; autofocus&gt;&gt;&lt;&lt;button &quot;Submit&quot;&gt;&gt;
 	&lt;&lt;if _input1 &gt; 0&gt;&gt;
-		&lt;&lt;set $playTime = &quot;_input1&quot;&gt;&gt;&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;_input1&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;set $playTime = _input1&gt;&gt;&lt;&lt;replace &quot;#output2&quot;&gt;&gt;&lt;&lt;= either([_input1])&gt;&gt;&lt;&lt;/replace&gt;&gt;
         
      &lt;&lt;elseif _input1 &lt; 1&gt;&gt;
-     	&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;positive numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+     	&lt;&lt;replace &quot;#output2&quot;&gt;&gt;&lt;&lt;= either([&quot;positive numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
         
 	&lt;&lt;else&gt;&gt;
-		&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;Numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;replace &quot;#output2&quot;&gt;&gt;&lt;&lt;= either([&quot;Numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;span id=&quot;output&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;output2&quot;&gt;&lt;/span&gt;
 
 
 How long to give players the time to think of words (Default 15 seconds)
 
 &lt;&lt;textbox &quot;_input2&quot; &quot;15&quot; autofocus&gt;&gt;&lt;&lt;button &quot;Submit&quot;&gt;&gt;
 	&lt;&lt;if _input2 &gt; 0&gt;&gt;
-		&lt;&lt;set $playTime = &quot;_input2&quot;&gt;&gt;&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;_input2&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;set $wordTime = _input2&gt;&gt;&lt;&lt;replace &quot;#output3&quot;&gt;&gt;&lt;&lt;= either([_input2])&gt;&gt;&lt;&lt;/replace&gt;&gt;
         
      &lt;&lt;elseif _input2 &lt; 1&gt;&gt;
-     	&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;positive numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+     	&lt;&lt;replace &quot;#output3&quot;&gt;&gt;&lt;&lt;= either([&quot;positive numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
         
 	&lt;&lt;else&gt;&gt;
-		&lt;&lt;replace &quot;#output&quot;&gt;&gt;&lt;&lt;= either([&quot;Numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;replace &quot;#output3&quot;&gt;&gt;&lt;&lt;= either([&quot;Numbers only.&quot;])&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;span id=&quot;output&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;output3&quot;&gt;&lt;/span&gt;
 
 
 
@@ -435,7 +435,7 @@ Random category - The number rolled coresponds to the position the category is i
 &lt;&lt;set $scenario = &quot;none&quot;&gt;&gt;
 &lt;&lt;set $playTime = 5&gt;&gt;
 &lt;&lt;set $wordTime = 15&gt;&gt;
-&lt;&lt;set $playerCount = 2&gt;&gt; /* be 2 */
+&lt;&lt;set $playerCount = 2&gt;&gt; 
 &lt;&lt;set $seconds to $wordTime&gt;&gt;
 
 /* fonts                                           */
@@ -482,7 +482,7 @@ Round Number &lt;br&gt;
 &lt;/div&gt;
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
+&lt;&lt;set $seconds = $wordTime&gt;&gt;
 Timer
 Countdown: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds remaining&lt;/span&gt;!
 &lt;&lt;button &quot;Start&quot;&gt;&gt;
@@ -779,7 +779,7 @@ Round Number &lt;br&gt;
 &lt;span id=&quot;roundNum&quot;&gt;1&lt;/span&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
+&lt;&lt;set $seconds = $wordTime&gt;&gt;
 Timer
 Countdown: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds remaining&lt;/span&gt;!
 &lt;&lt;button &quot;Start&quot;&gt;&gt;
@@ -1074,7 +1074,7 @@ Round Number &lt;br&gt;
 &lt;span id=&quot;roundNum&quot;&gt;1&lt;/span&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
+&lt;&lt;set $seconds = $wordTime&gt;&gt;
 Timer
 Countdown: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds remaining&lt;/span&gt;!
 &lt;&lt;button &quot;Start&quot;&gt;&gt;
@@ -1423,7 +1423,7 @@ Round Number &lt;br&gt;
 &lt;/div&gt;
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
+&lt;&lt;set $seconds = $wordTime&gt;&gt;
 Timer
 Countdown: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds remaining&lt;/span&gt;!
 &lt;&lt;button &quot;Start&quot;&gt;&gt;
